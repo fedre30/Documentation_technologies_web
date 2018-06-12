@@ -140,9 +140,83 @@ Exemple
 
 ### Vanilla JS
 
+* Variables / Constantes
+  - VAR 
+  - CONST (ES6) 
+  - LET (ES6)
+
+* Conditions
+  - IF .. ELSE
+  - SWITCH ... CASE
+  - Ternaire ( condition ? vrai : faux)
+
+* Boucles 
+  - for
+  - while
+  - do while 
+  - for..in
+  - for..of
+
+* Fonctions
+  - Fonction anonyme
+  - Fonction nommée
+  - Arrow fonction 
+  - Fonction d'haut niveau (https://www.youtube.com/watch?v=BMUiFMZr7vk) 
+  - Fermeture (*Closure*)
+  - Encapsulation
+  - Return, break, continue
+
+* DOM
+  - selectors (ex. querySelector, getElementById, getElementbyClass, querySelectorAll)
+  - Fonctions: 
+    - createElement
+    - classlist (add, remove, toggle)
+    - setAttribute
+    - parentNode, childNode  
+
+* Evenements
+  - Mouse (click, wheel)
+  - Window (scroll)
+  - Keyboard (keyup, keydown, keypress)
+  - Input (change, submit)
+  - preventDefault
+
+* Regex
+
+https://regex101.com
+
+  - Fonctions:
+    - match()
+    - search()
+    - split()
+    - replace()
+    
+
+* Tableaux 
+  - Fonctions: 
+    - map()
+    - reduce()
+    - indexOf()
+    - find()
+    - findIndex()
+    - filter
+    - pop()
+    - push()
+    - reverse()
+    - splice()
+    - join()
+    - toString()
+    - 
+
+* Objets
+
+
+
 #### POO
 
 #### Libraries
+
+#### Ajax
 
 ### Vue.js
 
