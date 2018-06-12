@@ -70,6 +70,27 @@ Il suit une structure dite **hiérarchisée** où chaque balise est ou bien pare
 
 ### CSS3
 
+CSS est l'acronyme de Cascading Style Sheet, ou feuille de style en cascade en français.
+Le CSS permet d'insérer des styles sur un code HTML ou XHTMl et donc permet de définir très précisément le comportement de chaque élément de la page.
+On voit déjà des sites fait entièrement en CSS (contrairement à la majorité des sites qui sont fait en tableau) mais le problème de la compatibilité avec certains explorateurs ne permettent pas d'exploiter toutes les fonctions des feuilles de style.
+
+* Une feuille de style CSS externe peut se faire avec le simple bloc-note, et il est d'usage de lui faire porter l'extension .css. On la liera ensuite à la page html à l'aide d'un link placé dans l'en-tête de la page.
+Mais on peut aussi déclarer les styles dans l'en-tête de la page, ou au sein des balises elles-mêmes. Cela peut-être intéressant pour appliquer des styles spécifiques et ils auront un ordre de priorité plus important. C'est ce qu'on appelle la "cascade".
+
+* Structure et syntaxe
+  * Selecteur (div, .nomDiv, .#id)
+  * Proprieté (ex. color)
+  * Attribut (ex. red)
+  ```
+  .nomDiv {
+    color: red;
+    }
+  ```
+  
+  N.B En CSS on encapsule les proprietés dans les accolades et chaque attribut est toujours suivi par un point virgule. Ceci ne s'applique pas pour SASS (cf. SCCS/ SASS).
+
+
+
 ### PUG (JADE)
 
 ### SCSS / SASS 
