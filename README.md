@@ -66,7 +66,7 @@ Il suit une structure dite **hiérarchisée** où chaque balise est ou bien pare
   <nav>
   <section>
   <summary>
-  <time>```
+  <time>
 
 ### CSS3
 
