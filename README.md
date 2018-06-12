@@ -88,6 +88,11 @@ Mais on peut aussi déclarer les styles dans l'en-tête de la page, ou au sein d
   ```
   
   N.B En CSS on encapsule les proprietés dans les accolades et chaque attribut est toujours suivi par un point virgule. Ceci ne s'applique pas pour SASS (cf. SCCS/ SASS).
+  
+#### Responsive
+
+
+#### Reset / Normalize
 
 
 
@@ -223,12 +228,5 @@ https://regex101.com
 ### Cycle.js
 
 ### Node.js
-
-## PHP
-
-### POO
-
-### Symfony
-
 
 ## Miscellaneous 
