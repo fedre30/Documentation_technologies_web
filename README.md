@@ -93,7 +93,48 @@ Mais on peut aussi déclarer les styles dans l'en-tête de la page, ou au sein d
 
 ### PUG (JADE)
 
+Pug est un moteur de templating qui permet d'acceler le développement du HTML grâce à un rendu en JS et Node.js.
+Il était connu sous le nom de *Jade* mais ils ont dû changer leur nom car Jade était déjà un nom enregistré.
+
+Caractéristiques:
+
+  * Pas de crochets ni de balises fermantes (gain en rapidité d'écriture)
+  * La hiérachie des balises se fait à travers l'indentation qui doit être rigoreusement respectée
+  * Possibilité de créer des conditions et des mixins
+
+
+
 ### SCSS / SASS 
+
+Similairement à Pug, SCSS/ SASS sont des extensions du CSS qui permettent de gagner en rapidité et productivité.
+
+SCSS :
+  * Possibilité d'embriquer les selecteurs pour respecter le niveau de hiérarchie
+  * Création de conditions, boucles et mixins (responsive)
+  * Possibilité d'utiliser des variables
+  
+```
+.jeSuisParent{
+  color: $someColor; // VARIABLE
+  
+.jeSuisEnfant {
+  color: yellow;
+  }
+}
+```
+  
+SASS :
+Mêmes carcatéristiques que le SCSS, mais différences à niveau syntaxique: alors que le SCSS respecte l'utilisation des accolades et des points virgules comme en CSS classique, en SASS il n'y a ni d'accolades ni de points virgules, ainsi la hiérarchie est gerée par l'indentation (comme en PUG, voir ci-dessus).
+
+Exemple 
+
+```
+.jeSuisParent
+  color: $someColor
+  
+  .jeSuisEnfant
+    color: yellow
+```
 
 ## Javascript
 
