@@ -3,6 +3,11 @@
 ## Intégration
 
 ### HTML5
+
+Le HTML5 est un langage de base pour la création de site internet, il sert à structurer le document. D’autre langage peuvent s’ajouter lors de la conception, mais tout les sites web contiennent du HTML. HTML5 désignant la version du langage HTML.
+
+Il suit une structure dite **hiérarchisée** où chaque balise est ou bien parent ou bien enfant d'une autre balise parent.
+
 * Balises
 ```
 <html> // Balise principale
@@ -47,7 +52,7 @@
 <progress> // Barre de progression
 <time> // Date ou heure
 ```
-Affichage formaté (pour les codes sources)
+
 * Nouvelles balises introduites avec HTML 5
   ```<article>
   <aside>
