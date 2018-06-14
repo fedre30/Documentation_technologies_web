@@ -347,6 +347,8 @@ class Player
 
 ### Ajax
 
+[Source: MOOC de Yves Amsellem](https://github.com/yamsellem/hetic.js/tree/master/MOOC) 
+
 Ajax (Asynchronous JavaScript and XML) est la technologie utilisée pour ce faire. Elle repose sur l'objet XMLHttpRequest qui permet de se connecter à un serveur, de lui envoyer des données et d'en recevoir en retour. Elle utilise le protocole HTTP ; le navigateur émet une requête et attend une réponse du serveur. Cette requête est asynchrone, elle ne bloque pas le navigateur, qui peut continuer à interagir avec l'utilisateur, et sera notifié lors du retour du serveur.
 
 Effectuer une requête xhr
