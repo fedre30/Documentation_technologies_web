@@ -578,6 +578,9 @@ export default {
 
 ## Cycle.js
 
+Cycle.js est un framework fondé sur la [**programmation reactive**](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754) et crée par André Staltz.
+
+
 ## Node.js
 
 ## Miscellaneous 
