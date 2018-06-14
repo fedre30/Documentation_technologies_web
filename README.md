@@ -270,33 +270,43 @@ https://regex101.com
 Terminologie:
 
 * **Espace de noms**
+
 Un conteneur qui permet aux développeurs d'empaqueter les différentes fonctionnalités d'un programme sous un même nom d'application.
 
 * **Classe**
+
 Définit les caractéristiques de l'objet.
 
 * **Objet**
+
 Une instance (un « exemplaire ») d'une classe.
 
 * **Propriété**
+
 Une caractéristique d'un objet (sa couleur par exemple).
 
 * **Méthode**
+
 Une capacité d'un objet (changer de couleur par exemple).
 
 * **Constructeur**
+
 Une méthode appelée au moment de l'instantiation.
 
 * **Héritage**
+
 Une classe peut hériter des caractéristiques et des fonctionnalités d'une autre classe.
 
 * **Encapsulation**
+
 Une classe définit uniquement les caractéristiques de son objet, une méthode définit uniquement la façon dont elle s'exécute. On regroupe donc les données et les méthodes qui utilisent ces données.
 
 * **Abstraction**
+
 La conjonction entre l'utilisation de l'héritage, de méthodes ou de propriétés d'un objet pour simuler un modèle de la réalité.
 
 * **Polymorphisme**
+
 Poly signifie « plusieurs » et morphisme signifie « formes ». Cela signifie que différentes classes peuvent définir la même méthode ou la même propriété.
 
 #### Libraries
