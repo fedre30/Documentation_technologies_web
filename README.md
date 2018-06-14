@@ -347,7 +347,7 @@ class Player
 
 ### Ajax
 
-[Source: MOOC de Yves Amsellem](https://github.com/yamsellem/hetic.js/tree/master/MOOC) 
+Source: [MOOC de Yves Amsellem](https://github.com/yamsellem/hetic.js/tree/master/MOOC) 
 
 Ajax (Asynchronous JavaScript and XML) est la technologie utilisée pour ce faire. Elle repose sur l'objet XMLHttpRequest qui permet de se connecter à un serveur, de lui envoyer des données et d'en recevoir en retour. Elle utilise le protocole HTTP ; le navigateur émet une requête et attend une réponse du serveur. Cette requête est asynchrone, elle ne bloque pas le navigateur, qui peut continuer à interagir avec l'utilisateur, et sera notifié lors du retour du serveur.
 
@@ -482,6 +482,20 @@ Les then sont chaînables, un then peut retourner une valeur ou une promesse. S'
 Ici, à titre d'exemple, si le temps de clic est inférieur à une seconde, un résultat est retourné, capturé à son tour par une nouvelle promesse qui reçoit le résultat de celle qui l'a précédé. Un exemple plus courant, est celui ou un appel asynchrone est retourné, dont le résultat est passé au then suivant quand l'appel succède ou échoue.
 
 ## Vue.js
+
+Source: [Vue.js](https://fr.vuejs.org/v2/guide/)
+
+Vue (prononcé /vjuː/, comme le terme anglais view) est un framework évolutif pour construire des interfaces utilisateur. À la différence des autres frameworks monolithiques, Vue a été conçu et pensé pour pouvoir être adopté de manière incrémentale. Le cœur de la bibliothèque est concentré uniquement sur la partie vue, et il est vraiment simple de l’intégrer avec d’autres bibliothèques ou projets existants. 
+
+Bonnes pratiques:
+
+* Bien séparer les composants et les pages
+* Nommer chaque composant en mettant un prefixe unique au projet suivi d'un underscore et ensuite le nom du composant. Ceci est pour reconnaître l'origine des composants lorsqu'on les réutilise dans d'autres projets.
+* Utiliser des props. Toujours. Data() en dur, c'est mal.
+
+La base à connaître pour comprendre Vue.js:
+
+![alt text](https://fr.vuejs.org/images/lifecycle.png)
 
 ## Cycle.js
 
