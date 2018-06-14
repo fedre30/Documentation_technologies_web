@@ -111,15 +111,15 @@ Exemple media-query
 Source: https://stackoverflow.com/questions/6887336/what-is-the-difference-between-normalize-css-and-reset-css
 
 >The main differences are:
-
+>
 >1. Normalize.css preserves useful defaults rather than "unstyling" everything. For example, elements like sup or sub "just >work" after including normalize.css (and are actually made more robust) whereas they are visually indistinguishable from >normal text after including reset.css. So, normalize.css does not impose a visual starting point (homogeny) upon you. This >may not be to everyone's taste. The best thing to do is experiment with both and see which gels with your preferences.
-
+>
 >2. Normalize.css corrects some common bugs that are out of scope for reset.css. It has a wider scope than reset.css, and also >provides bug fixes for common problems like: display settings for HTML5 elements, the lack of font inheritance by form >elements, correcting font-size rendering for pre, SVG overflow in IE9, and the button styling bug in iOS.
-
+>
 >3. Normalize.css doesn't clutter your dev tools. A common irritation when using reset.css is the large inheritance chain that >is displayed in browser CSS debugging tools. This is not such an issue with normalize.css because of the targeted stylings.
-
+>
 >4. Normalize.css is more modular. The project is broken down into relatively independent sections, making it easy for you to >potentially remove sections (like the form normalizations) if you know they will never be needed by your website.
-
+>
 >5. Normalize.css has better documentation. The normalize.css code is documented inline as well as more comprehensively in the >GitHub Wiki. This means you can find out what each line of code is doing, why it was included, what the differences are >between browsers, and more easily run your own tests. The project aims to help educate people on how browsers render elements >by default, and make it easier for them to be involved in submitting improvements.
 
 
@@ -169,6 +169,16 @@ Exemple
   .jeSuisEnfant
     color: yellow
 ```
+
+### Bundlers
+
+* [Rollup](https://github.com/rollup/rollup)
+* [Parcel](https://parceljs.org)
+* [Webpack](https://webpack.js.org)
+* [Webstarter Kit](https://developers.google.com/web/tools/starter-kit/)
+* [Gulp](https://gulpjs.com)
+
+
 
 ## Javascript
 
@@ -227,6 +237,10 @@ https://regex101.com
     
 
 * Tableaux 
+  - Proprietés
+    - length
+    - Constructor
+    - Prototype
   - Fonctions: 
     - map()
     - reduce()
@@ -242,11 +256,48 @@ https://regex101.com
     - toString()
     - 
 
-* Objets
-
+* Objets / dictionnaires
+  ```
+  var Objet = {
+    clé : proprieté;
+    deuxiemeClé : proprieté
+  }
+  ```
 
 
 #### POO
+
+Terminologie:
+
+* **Espace de noms**
+Un conteneur qui permet aux développeurs d'empaqueter les différentes fonctionnalités d'un programme sous un même nom d'application.
+
+* **Classe**
+Définit les caractéristiques de l'objet.
+
+* **Objet**
+Une instance (un « exemplaire ») d'une classe.
+
+* **Propriété**
+Une caractéristique d'un objet (sa couleur par exemple).
+
+* **Méthode**
+Une capacité d'un objet (changer de couleur par exemple).
+
+* **Constructeur**
+Une méthode appelée au moment de l'instantiation.
+
+* **Héritage**
+Une classe peut hériter des caractéristiques et des fonctionnalités d'une autre classe.
+
+* **Encapsulation**
+Une classe définit uniquement les caractéristiques de son objet, une méthode définit uniquement la façon dont elle s'exécute. On regroupe donc les données et les méthodes qui utilisent ces données.
+
+* **Abstraction**
+La conjonction entre l'utilisation de l'héritage, de méthodes ou de propriétés d'un objet pour simuler un modèle de la réalité.
+
+* **Polymorphisme**
+Poly signifie « plusieurs » et morphisme signifie « formes ». Cela signifie que différentes classes peuvent définir la même méthode ou la même propriété.
 
 #### Libraries
 
