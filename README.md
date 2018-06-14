@@ -91,8 +91,37 @@ Mais on peut aussi déclarer les styles dans l'en-tête de la page, ou au sein d
   
 #### Responsive
 
+La spécification CSS3 Media Queries définit les techniques pour l'application de feuilles de styles en fonction des périphériques de consultation utilisés pour du HTML. On nomme également cette pratique Responsive Web Design, pour dénoter qu'il s'agit d'adapter dynamiquement le design à l'aide de CSS.
+
+Ces bonnes pratiques permettent d'exploiter encore plus les avantages de la séparation du contenu et de la présentation : l'intérêt est de pouvoir satisfaire des contraintes de dimensions, de résolutions et d'autres critères variés pour améliorer l'apparence graphique et la lisibilité (voire l'utilisabilité) d'un site web. Les plateformes exotiques sont concernées en premier lieu : navigateurs mobiles et tablettes, écrans à faibles résolutions, impression, tv, synthèses vocales, plages braille, etc.
+
+Exemple media-query
+
+```@media screen and (min-width: 200px) and (max-width: 640px) {
+  .bloc {
+    display:block;
+    clear:both;
+  }
+}
+```
+
 
 #### Reset / Normalize
+
+Source: https://stackoverflow.com/questions/6887336/what-is-the-difference-between-normalize-css-and-reset-css
+
+>The main differences are:
+
+>1. Normalize.css preserves useful defaults rather than "unstyling" everything. For example, elements like sup or sub "just >work" after including normalize.css (and are actually made more robust) whereas they are visually indistinguishable from >normal text after including reset.css. So, normalize.css does not impose a visual starting point (homogeny) upon you. This >may not be to everyone's taste. The best thing to do is experiment with both and see which gels with your preferences.
+
+>2. Normalize.css corrects some common bugs that are out of scope for reset.css. It has a wider scope than reset.css, and also >provides bug fixes for common problems like: display settings for HTML5 elements, the lack of font inheritance by form >elements, correcting font-size rendering for pre, SVG overflow in IE9, and the button styling bug in iOS.
+
+>3. Normalize.css doesn't clutter your dev tools. A common irritation when using reset.css is the large inheritance chain that >is displayed in browser CSS debugging tools. This is not such an issue with normalize.css because of the targeted stylings.
+
+>4. Normalize.css is more modular. The project is broken down into relatively independent sections, making it easy for you to >potentially remove sections (like the form normalizations) if you know they will never be needed by your website.
+
+>5. Normalize.css has better documentation. The normalize.css code is documented inline as well as more comprehensively in the >GitHub Wiki. This means you can find out what each line of code is doing, why it was included, what the differences are >between browsers, and more easily run your own tests. The project aims to help educate people on how browsers render elements >by default, and make it easier for them to be involved in submitting improvements.
+
 
 
 
