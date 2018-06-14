@@ -352,6 +352,8 @@ Ajax (Asynchronous JavaScript and XML) est la technologie utilisée pour ce fair
 Effectuer une requête xhr
 L'objet XMLHttpRequest permet d'effectuer des requêtes HTTP dans le navigateur. Il dispose de nombreuses méthodes afin d'indiquer le verbe, la ressource, les headers, le body et de s'abonner à la réponse du serveur.
 
+#### XHR
+
 **Requête ajax GET** :
 
 ```
@@ -389,6 +391,93 @@ xhr.send(JSON.stringify({name:"contact@mail.com"}));
 ```
 
 La même logique s'applique lors de l'envoi de données au serveur, seule le verbe utilisé change et la méthode send peut alors recevoir une chaîne de caractère à transmettre au serveur. Ici aussi, le recours à JSON permet de transformer un objet JavaScript pour le transmettre au format texte au serveur.
+
+#### FETCH
+
+L'objet fetch a été ajouté récemment aux navigateurs dans l'optique de simplifier les requêtes Ajax. Comme certains navigateurs ne le supportent pas, il peut être nécessaire d'ajouter un polyfill pour ajouter cette fonctionnalité à ces anciens navigateurs. Fetch présentes deux différences majeures par rapport à xhr :
+
+il retourne un stream plutôt qu'une réponse immédiate
+il fonctionne avec des promesses, à la place de callback
+Requête fetch GET :
+```
+fetch('http://www.thebeatles.com/news')
+.then(function(response) {
+    return response.json();
+})
+.then(function(body) {
+    /* use body as a classic dictionnary */
+});
+```
+
+Requête fetch POST :
+
+```
+fetch('http://www.thebeatles.com/subscribe', {
+    method: 'POST',
+    json: JSON.stringify({name:"contact@mail.com"})
+}).then(function(response) {
+    return response.json();
+})
+.then(function(body) {
+    /* use body as a classic dictionnary */
+});
+```
+
+L'objet response est de stype stream, celui-ci représente un flux de données. Il permet de choisir comment les données d'un serveur doivent être consommées. Avec l'appel response.json() le flux est lu en entier et retourné au format JSON. Si la requête retourne un fichier volumineux, il est possible de le lire morceau après morceau afin de ne pas télécharger l'intégralité de celui-ci dans la mémoire du navigateur.
+
+#### Promesses
+
+L'objet Promise a été inventé par jQuery avant d'être introduit en natif dans le langage. Il représente la réussite éventuelle, ou l'échec éventuel, d'une opération asynchrone et sa valeur de retour. Comme un callback traditionnel, il permet de s'abonner à cette réussite avec une fonction ou un échec avec une autre fonction dont l'une des deux sera invoquée à la résolution de l'opération asynchrone.
+
+Très utilisées pour les appels serveur — l'application récupère la main et peut effectuer d'autres opérations en attendant la réponse — les promesses peuvent également servir à ordonner des opérations asynchrones de tout genre plus facilement.
+
+Comme fetch et les stream, son support est encore partiel sur les navigateurs et il est parfois nécessaire d'ajouter un polyfill pour ce faire.
+
+Une promesse propose deux méthodes pour s'abonner à son futur résultat, then et catch. La première permet de s'abonner au succès de l'appel, la second à son échec. La spécification A+ détaille ce fonctionnement, notamment :
+
+les promesse sont thenable, il est possible de chaîner plusieurs then qui attendront que le précédent soit résolu avant de se résoudre elles-mêmes avec son résultat
+un catch en bout de chaîne capture toutes les erreurs pouvant se produire sur la chaîne, et celle-ci est intérompue dès qu'une erreur se produit
+Création d'une promesse, résolue si l'utilisateur clique sur le <body> en moins de 5 secondes :
+
+```
+var clicked = new Promise(function(resolve, reject) {
+    setTimeout(reject, 5000);
+
+    var start = new Date();
+    document.body.addEventListener('click', function(e) {
+        var end = new Date();
+        resolve(end.getTime() - start.getTime());
+    })
+});
+```
+
+Les promesses A+ intégrées au langage (norme respectée par jQuery depuis sa version 3.0) prennent deux fonctions en paramètres, resolve et reject. L'une de ces deux fonctions — et une seule des deux — doit être appelée lorsque l'opération asynchrone encapsulée est terminée, resolve si c'est avec succès, reject sinon.
+
+Une promesse ne peut être résolue qu'une fois. Dans cet exemple, soit l'utilisateur clique sur le body dans les 5 secondes, et la promesse est un succès, soit, ce n'est pas le cas, et le timeout déclenche un échec. Bien que l'utilisateur puisse cliquer à nouveau sur le body, seul le premier appel de la méthode resolve ou reject résoudra la promesse, les suivants sont ignorés. Une fois dans un état, succès ou échec, une promesse ne peut plus en changer.
+
+Une fois cette promesse créée, le code qui l'utilise s'abonne à son résultat futur. Avec then il indique quelles opérations suivront cette opération quand elle sera terminée avec succès. Avec catch, quelles opérations suivront si elle se termine en erreur.
+
+Abonnement à une promesse :
+
+```
+clicked.then(function(time) {
+    console.log(time);
+});
+
+clicked.then(function(time) {
+    return (time < 1000)
+}).then(function(quick) {
+    if (quick)
+        console.log('quick click');
+}).catch(console.error);
+
+```
+
+Une promesse peut avoir plusieurs souscriptions. Il est même possible de s'abonner alors qu'elle est déjà résolue, le then ou le catch étant alors immédiatement invoqués.
+
+Les then sont chaînables, un then peut retourner une valeur ou une promesse. S'il retourne une promesse, le then suivant attendra le succès de cette promesse avant de s'exécuter à son tour. Le catch capture les erreurs (throw ou reject). Si un then est placé après lui, il reprendra la main une fois l'erreur gérée par le catch.
+
+Ici, à titre d'exemple, si le temps de clic est inférieur à une seconde, un résultat est retourné, capturé à son tour par une nouvelle promesse qui reçoit le résultat de celle qui l'a précédé. Un exemple plus courant, est celui ou un appel asynchrone est retourné, dont le résultat est passé au then suivant quand l'appel succède ou échoue.
 
 ## Vue.js
 
