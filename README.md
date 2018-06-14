@@ -265,7 +265,7 @@ https://regex101.com
   ```
 
 
-#### POO
+### Programmation Orientée Objet
 
 Terminologie:
 
@@ -309,14 +309,91 @@ La conjonction entre l'utilisation de l'héritage, de méthodes ou de propriét�
 
 Poly signifie « plusieurs » et morphisme signifie « formes ». Cela signifie que différentes classes peuvent définir la même méthode ou la même propriété.
 
-#### Libraries
+Exemple:
+```
+class Player
+{
+    constructor() {
+        this._x = (MAP_COLUMNS - PLAYER_WIDTH) / 2;
+        this._y = MAP_ROWS - (PLAYER_HEIGHT + 1);
+    }
 
-#### Ajax
+    // Returns the X position of the player
+    get x() {
+        return this._x;
+    }
 
-### Vue.js
+    // Sets the X position of the player, checking bounds to make sure the player doesn't exit the screen
+    set x(newX) {
+        if (newX > (MAP_COLUMNS - PLAYER_WIDTH))
+            this._x = MAP_COLUMNS - PLAYER_WIDTH;
+        else if (newX < 0)
+            this._x = 0;
+        else
+            this._x = newX;
+    }
 
-### Cycle.js
 
-### Node.js
+```
+
+
+### Libraries
+
+* [Lodash](https://lodash.com)
+* [JQuery](http://jquery.com)
+* [Lethargy](https://github.com/d4nyll/lethargy)
+* [Tween](https://github.com/tweenjs/tween.js/)
+* [Animejs](http://animejs.com)
+
+### Ajax
+
+Ajax (Asynchronous JavaScript and XML) est la technologie utilisée pour ce faire. Elle repose sur l'objet XMLHttpRequest qui permet de se connecter à un serveur, de lui envoyer des données et d'en recevoir en retour. Elle utilise le protocole HTTP ; le navigateur émet une requête et attend une réponse du serveur. Cette requête est asynchrone, elle ne bloque pas le navigateur, qui peut continuer à interagir avec l'utilisateur, et sera notifié lors du retour du serveur.
+
+Effectuer une requête xhr
+L'objet XMLHttpRequest permet d'effectuer des requêtes HTTP dans le navigateur. Il dispose de nombreuses méthodes afin d'indiquer le verbe, la ressource, les headers, le body et de s'abonner à la réponse du serveur.
+
+**Requête ajax GET** :
+
+```
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'http://www.thebeatles.com/news', true);
+xhr.setRequestHeader('Content-Type', 'application/json');
+
+xhr.onload = function() {
+  var status = xhr.status;
+  var body = JSON.parse(xhr.responseText);
+
+  /* use body as a classic dictionnary */
+}
+xhr.send();
+```
+
+La méthode open de cet objet permet de configurer la requête, d'abord le verbe, ensuite l'URI et enfin un booléen indiquant qu'il s'agit d'une requête asynchrone. Les requêtes synchrones sont dépréciées dans les navigateurs modernes. Bloquer le code en attendant la réponse du serveur est considéré comment nuisant grandement à l'expérience utilisateur (puisque cela revient à blqouer complétement le navigateur tant que le serveur n'a pas répondu).
+
+La méthode onload permet de s'abonner à la réponse du serveur. Dès que celle-ci advient, la méthode est exécutée et les attributs responseText et status de la requête sont disponibles. Afin de transformer la réponse obtenue en objet JavaScript, il est possible d'utiliser la méthode parse de la variable globale JSON.
+
+La méthode send permet d'effectuer l'appel.
+
+**Requêtes ajax POST** :
+
+```
+var xhr = new XMLHttpRequest();
+xhr.open("POST", "http://www.thebeatles.com/subscribe", true);
+xhr.setRequestHeader("Content-Type", "application/json");
+
+xhr.onload = function() {
+  var body = JSON.parse(xhr.responseText);
+  var status = xhr.status;
+}
+xhr.send(JSON.stringify({name:"contact@mail.com"}));
+```
+
+La même logique s'applique lors de l'envoi de données au serveur, seule le verbe utilisé change et la méthode send peut alors recevoir une chaîne de caractère à transmettre au serveur. Ici aussi, le recours à JSON permet de transformer un objet JavaScript pour le transmettre au format texte au serveur.
+
+## Vue.js
+
+## Cycle.js
+
+## Node.js
 
 ## Miscellaneous 
