@@ -497,6 +497,85 @@ La base à connaître pour comprendre Vue.js:
 
 ![alt text](https://fr.vuejs.org/images/lifecycle.png)
 
+Exemple :
+
+```
+<template>
+  <div class="nav-item" :class="{'is-active': active}" @click="onClick">
+    <span class="svg-center"><icon :name="icon" class="nav-icon" scale="1.5"></icon></span>
+
+    <a href="#" class="nav-link light">{{name}}</a>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'izi-menu-link',
+  
+  // METHODS
+
+  methods: {
+    onClick () {
+      this.$emit('click')
+    }
+  },
+  
+// PROPS
+
+  props: {
+    active: {
+      type: Boolean,
+      default: false
+    },
+    icon: {
+      type: String,
+      required: false
+    },
+    name: {
+      type: String,
+      required: true
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="sass">
+@import "../styles/variables"
+
+.nav-item
+  width: 100%
+  height: calc(32px + 2rem)
+  margin: 0
+  padding-left: 1rem
+  border-bottom: 2px solid $lightViolet
+  user-select: none
+  background-color: linear-gradient(to right, $darkViolet, $mediumViolet)
+  *
+    line-height: calc(32px + 2rem)
+  .svg-center
+    width: 40px
+    height: 20px
+  .nav-icon
+    color: white
+    margin-right: $menuSize
+  .nav-link
+    color: white
+    text-decoration: none
+    font-size: $menuSize
+
+  &.is-active
+    background-color: $lightViolet
+    .nav-icon
+      color: $darkViolet
+    .nav-link
+      color: $darkViolet
+
+</style>
+```
+
+
+
 ## Cycle.js
 
 ## Node.js
