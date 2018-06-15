@@ -178,6 +178,11 @@ Exemple
 * [Webstarter Kit](https://developers.google.com/web/tools/starter-kit/)
 * [Gulp](https://gulpjs.com)
 
+### Boilerplates
+
+* [Skeleton](http://getskeleton.com)
+* [HTML5 Boilerplate](https://html5boilerplate.com)
+
 
 
 ## Javascript
@@ -344,6 +349,7 @@ class Player
 * [Lethargy](https://github.com/d4nyll/lethargy)
 * [Tween](https://github.com/tweenjs/tween.js/)
 * [Animejs](http://animejs.com)
+* [Hamburgers](https://jonsuh.com/hamburgers/)
 
 ### Ajax
 
@@ -738,5 +744,17 @@ app.listen(3000);
 ```
 
 ## Miscellaneous 
+
+### Sites de veilles
+
+* [Reddit - daily programmer](https://www.reddit.com/r/dailyprogrammer/?count=925&after=t3_pr4vo)
+* [Codrops](https://tympanus.net/codrops/)
+* [Medium] (https://medium.com)
+* [Awwwards] (https://www.awwwards.com)
+* [The Verge](https://www.theverge.com)
+* [VuejsDevelopers](https://vuejsdevelopers.com)
+* [Codepen](https://codepen.io)
+
+
 
 
