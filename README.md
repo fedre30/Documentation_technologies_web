@@ -748,9 +748,9 @@ app.listen(3000);
 ### Sites de veilles
 
 * [Reddit - daily programmer](https://www.reddit.com/r/dailyprogrammer/?count=925&after=t3_pr4vo)
-* [Codrops](https://tympanus.net/codrops/)
-* [Medium] (https://medium.com)
-* [Awwwards] (https://www.awwwards.com)
+* [Codrops](https://tympanus.net/codrops)
+* [Medium](https://medium.com)
+* [Awwwards](https://www.awwwards.com)
 * [The Verge](https://www.theverge.com)
 * [VuejsDevelopers](https://vuejsdevelopers.com)
 * [Codepen](https://codepen.io)
